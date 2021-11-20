@@ -1,0 +1,9 @@
+# Default ignored files
+/shelf/
+/.idea/
+/*.iml
+/target/
+/.DS_Store
+/test-output/
+/.gitignore
+/reports/
