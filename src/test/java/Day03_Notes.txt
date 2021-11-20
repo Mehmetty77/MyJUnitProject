@@ -1,0 +1,53 @@
+===DAY03========
+<a class="nav-item nav-link" data-test="addresses" href="/addresses">Addresses</a>
+
+This element is a link. because is has a tag.
+We CAN USE
+5. linkText
+
+6. partialLinkText
+
+7. xpath
+***There are 2 types of xpath
+1. Absolute
+2. Relative
+
+Note: We should not use absolute for locating elements
+
+***Locate the elements using relative xpath
+
+<input type="email" class="form-control" placeholder="Email" data-test="email" name="session[email]" id="session_email">
+
+//tag[@ANYattribute='Value of that attribute'];
+
+Tag: input
+Attribute: type, classs,....
+Value : email, form-control,...
+
+XPATH FOR THIS ELEMENT. USE ANY OF THEM
+//input[@type='email']
+//input[@class='form-control']
+//input[@placeholder='Email']
+//input[@data-test='email']
+//input[@name='session[email]']
+//input[@id='session_email']
+
+When xpath return multiple elements, we can use index to get unique element
+For example, //input[@class='form-control'] return email and password elements
+
+(//input[@class='form-control'])[1] --->>> returns the email that is in the first index
+(//input[@class='form-control'])[2] --->>> returns the password that is in the second index
+
+NOTE: If there are multiple match, findElement will give the first element by default.
+
+*****Which locator do you prefer to use?
+-I prefer to use id.
+*****Why?
+-Because id is unique.
+*****What if id is not unique?
+-Well, id normally should be unique. Dev may assign not unique id by mistake. In that case, I can use other locators such as name.
+
+1.id
+2.name
+3.I don't use className, cause they are not usually unique
+4.If there is no unique identifier such as id or name, then I write DYNAMIC RELATIVE XPATH

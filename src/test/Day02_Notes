@@ -1,0 +1,63 @@
+***myjunitproject35_36  is the framework
+***.idea --->>> Belong to indellij. It has project specific information. DO NOT TOUCH
+***src --->>> source folder. It is used to create the classes and methods.
+It is used to either create a development or testing framework
+main --->>> usually used by developers for development
+test --->>> usually used by testers for testing
+***pom.xml --->>> this is the most important file in a maven project
+-used to add dependencies, plugins, and similar configurations
+***external libraries
+this has imported libraries/jar files/plugins/dependencies
+==============================
+LOCATORS:
+1. id    : if there is an id attribute, then we can use id
+2. name
+3. className
+4. tagName
+5. linkText
+6. partialLinkText
+7. xpath
+8. css
+
+EMAIL ELEMENT:
+
+<input type="email" class="form-control" placeholder="Email" data-test="email" name="session[email]" id="session_email">
+
+TERMS:
+tag       : input
+attribute : type, class, placeholder, data-test, name, id
+value     : email is the value of type, session_email is the value of id,...
+
+******1. Locating the element by id.
+
+***Can I locate the element by id????
+-Yes cause there is an id attribute
+
+***How can I locate/find that element?
+WebElement emailBox=driver.findElement(By.id("session_email"));
+emailBox.sendKeys("testtechproed@gmail.com");
+
+NOTE:
+I can locate the same element by name
+driver.findElement(By.id("session_email"));
+
+I can locate the same element by className
+driver.findElement(By.className("form-control"));
+
+I can locate the same element by tagName. NOT RECOMMENDED
+
+I cannot use linkText or partialLinkText because input is not a hyperlink
+
+I can use xpath css
+
+
+******2. Location element by name:
+PASSWORD ELEMENT
+
+<input class="form-control" placeholder="Password" data-test="password" type="password" name="session[password]" id="session_password">
+
+driver.findElement(By.name("session[password]"));
+
+*****3. Locate id by className
+<span class="navbar-text" data-test="current-user">testtechproed@gmail.com</span>
+driver.findElement(By.className("navbar-text"));

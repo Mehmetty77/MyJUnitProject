@@ -1,0 +1,20 @@
+*****Steps for interaction with dropdown elements
+Step 1: Locate the select element dropdown using any locator. Example:
+ WebElement selectElement=driver.findElement(By.id(“value of id"));
+Step 2: Create Select object and pass the selectElement to that object.Example:
+ Select options=new Select(selectElement);
+Step 3: We now can handle dropdown using any method. Example:
+options.selectByIndex(1);
+options.selectByValue(“1”);
+options.selectByVisibleText(“Watch”);
+
+*****There are 3 ways to select from a dropdown
+ select.selectByIndex(1);
+ select.selectByValue("2");
+ select.selectByVisibleText("Option 1");
+
+*****getOptions(); returns all dropdown options as List<WebElement>
+ List<WebElement> allOption = select.getOptions();
+
+*****getFirstSelectedOption(); returns the first selected option from a dropdown
+ WebElement firstSelectedOption = select.getFirstSelectedOption();
